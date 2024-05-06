@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unknown-property */
 import React from 'react';
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo.png';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     return (
@@ -10,8 +12,7 @@ export default function Navbar() {
                         <div
                             class="flex flex-1 items-center justify-center md:items-stretch md:justify-start"
                         >
-
-                            <a class="flex flex-shrink-0 items-center mr-4" href="/index.html">
+                            <Link class="flex flex-shrink-0 items-center mr-4" to="/index.html">
                                 <img
                                     class="h-10 w-auto"
                                     src={logo}
@@ -20,23 +21,23 @@ export default function Navbar() {
                                 <span class="hidden md:block text-white text-2xl font-bold ml-2"
                                 >React Jobs</span
                                 >
-                            </a>
+                            </Link>
                             <div class="md:ml-auto">
                                 <div class="flex space-x-2">
-                                    <a
-                                        href="/"
+                                    <Link
+                                        to="/"
                                         class="text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-                                    >Home</a
+                                    >Home</Link
                                     >
-                                    <a
-                                        href="/jobs"
+                                    <Link
+                                        to="/jobs"
                                         class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-                                    >Jobs</a
+                                    >Jobs</Link
                                     >
-                                    <a
-                                        href="/add-job"
+                                    <Link
+                                        to="/add-job"
                                         class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-                                    >Add Job</a
+                                    >Add Job</Link
                                     >
                                 </div>
                             </div>
