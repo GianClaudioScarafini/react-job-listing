@@ -5,18 +5,19 @@ import {
   RouterProvider,
   Router,
 } from 'react-router-dom';
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import HomeCards from "./components/HomeCards";
-import JobLIstings from "./components/JobLIstings";
-import ViewAllJobs from "./components/ViewAllJobs";
+import HomePage from './pages/HomaPage';
+import MainLayout from './layout/MainLayout'
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route index element={<h1>my App</h1>} />)
+  createRoutesFromElements(
+    <Route path='/' element={<MainLayout />}>
+      <Route index element={<HomePage />} />
+    </Route>
+  )
 );
 
 const App = () => {
-  return  <RouterProvider router={router} /> ;
+  return <RouterProvider router={router} />;
 };
 
 export default App;
