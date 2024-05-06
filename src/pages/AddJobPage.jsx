@@ -19,25 +19,29 @@ const addJobPage = ({ addJobSubmeet }) => {
 
     const navigate = useNavigate();
 
-const submitForm = (event) => {
-    event.preventDefault(); // Prevent the default form submission
-    const newjob = {
-        title,
-        type,
-        location,
-        description,
-        salary,
-        company: {
-            name: companyName,
-            description: companyDescription,
-            contactEmail,
-            contactPhone
-        },
-        }
-        addJobSubmeet(newjob);
-        return navigate('/jobs');
-};
+    const submitForm = (e) => {
+        e.preventDefault();
 
+        const newJob = {
+            title,
+            type,
+            location,
+            description,
+            salary,
+            company: {
+                name: companyName,
+                description: companyDescription,
+                contactEmail,
+                contactPhone,
+            },
+        };
+
+        addJobSubmit(newJob);
+
+        toast.success('Job Added Successfully');
+
+        return navigate('/jobs');
+    };
     return (
         <>
             <section className="bg-indigo-50">
